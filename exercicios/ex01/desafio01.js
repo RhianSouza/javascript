@@ -8,7 +8,7 @@ const usuario = {
     apresentar: function(){
         console.log(`Oi, eu sou ${this.nome}, Tenho ${this.idade} anos e meu email é ${this.email}`)
     },
-
+ 
     mostrarHobbies: function(){
         for (let i = 0; i < this.hobbies.length; i++){
             console.log(this.hobbies[i])
