@@ -21,15 +21,31 @@ const carrinho = {
       },
 
       adicionarProduto: function(nome, preco, quantidade){
-         this.produto.push({
-            nome: nome,
-            preco: preco,
-            quantidade: quantidad
-         })
+
+   let encontrado = false
+
+   for (let i = 0; i < this.produto.length; i++) {
+
+      if (this.produto[i].nome === nome){
+         this.produto[i].quantidade += quantidade
+         encontrado = true
+         break
       }
+   }
+
+   if (!encontrado){
+      this.produto.push({
+         nome: nome,
+         preco: preco,
+         quantidade: quantidade
+      })
+   }
+}
 
 
    }
+
+carrinho.adicionarProduto("Arroz", 16, 80)
 
 carrinho.adicionarProduto("leite", 4, 4)
 carrinho.adicionarProduto("Sal", 9, 1)
