@@ -1,29 +1,16 @@
-function CONTADOR() {
-    let valor = 0
-
-    return {
-        incrementar() {
-            valor++
-            return valor
-        },
-        diminuir() {
-            valor--
-            return valor
-        }
+function calcular(a, b) {
+    function soma() {
+        return a + b
     }
-
+    return soma()
 }
-const C = CONTADOR()
 
-console.log(C.incrementar())
-console.log(C.incrementar())
-console.log(C.diminuir())
-console.log(C.incrementar())
+console.log(calcular(5, 3))
 
 // 2 -------
 
 function contador() {
-    let num = 20
+    let num = 1
 
     return function () {
         return num++
@@ -47,14 +34,14 @@ function mutiplicador(num) {
 
 const dobrar = mutiplicador(2)
 
-console.log(dobrar(50))
+console.log(dobrar(5))
 
 // 4 --------
 function contador2() {
     let num = 0
 
     return function () {
-        return num += -2
+        return num += 2
     }
 }
 
@@ -65,16 +52,10 @@ console.log(CONTAR())
 console.log(CONTAR())
 
 // 5 -----------
+for (var i = 1; i <= 3; i++) {
 
-for (let i = 1; i <= 3; i++) {
-
-    setTimeout(function () {
-        console.log(i)
-    }, 1000)
+  setTimeout(function() {
+    console.log(i)
+  }, 1000)
 
 }
-
-
-
-
-
