@@ -27,8 +27,34 @@ console.log(totalValue)
 
 
 const usuarios = [
-  { nome: "Ana", idade: 22, ativo: true },
-  { nome: "Carlos", idade: 17, ativo: false },
-  { nome: "João", idade: 30, ativo: true },
-  { nome: "Marina", idade: 15, ativo: true }
+    { nome: "Ana", idade: 22, ativo: true },
+    { nome: "Carlos", idade: 17, ativo: false },
+    { nome: "João", idade: 30, ativo: true },
+    { nome: "Marina", idade: 15, ativo: true }
 ];
+
+console.log(usuarios.filter(uAtvivos => uAtvivos.ativo))
+
+const users = usuarios
+    .filter(uAtvivos => uAtvivos.ativo)
+    .map(uNome => uNome.nome)
+
+console.log(users)
+
+console.log(usuarios.some(uMenor => uMenor.idade < 18))
+
+const activeUsers = usuarios
+    .filter(uAtvivos => uAtvivos.ativo)
+    .every(uAtivosMaiores => uAtivosMaiores.idade >= 18)
+
+console.log(activeUsers)
+
+console.log(usuarios.find(uMaior25 => uMaior25.idade >= 25))
+
+const sumOfAge = usuarios
+    .filter(uAtvivos => uAtvivos.ativo)
+    .reduce((acc, user) => {
+        return acc + user.idade
+    }, 0)
+
+console.log(sumOfAge)
