@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(135, 106, 67);
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCICIO 1 -->
+    <h1>Controle de texto</h1>
+    <input type="button" value="click" id="b1">
+
+    <p id="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cumque quis doloremque? Molestiae,
+        necessitatibus veniam nulla recusandae dolor amet! Nulla rerum ex sapiente, incidunt a tempora voluptate saepe?
+        Distinctio, harum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae est quisquam fuga perspiciatis
+        unde modi, tenetur sint ex hic reiciendis quia praesentium neque assumenda eum possimus nostrum excepturi nam
+        eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident, fuga officia dolor deleniti optio
+        dignissimos, iure sit vitae tenetur perferendis repellendus, neque reprehenderit consequuntur dolores maiores
+        assumenda eaque debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga ea praesentium quasi
+        vero vitae harum in nobis quae dolorum, deleniti iusto. Illum error amet eum molestiae, molestias fugiat quidem
+        a.</p>
+
+
+    <hr>
+    <!--EXERCICIO 2-->
+    <h2>Mostrar o que o usuário digitou</h2>
+    <input type="text" id="i2"> -
+    <input type="button" value="click" id="b2">
+    <br><br>
+    <div id="campoVazio"></div>
+
+
+    <hr>
+    <!-- EXERCICIO 3 -->
+     <h2>Criar coisas dinamicamente</h2>
+    <input type="text" id="adicionar"> -
+    <input type="button" value="click" id="b3">
+    <ul></ul>
+
+    <script>
+        /* EX 1 */
+        let mudarTitulo = window.document.querySelector("h1")
+        let mudarParag = window.document.getElementById("p1")
+        let botao1 = window.document.getElementById("b1")
+
+        botao1.addEventListener("click", () => {
+            mudarTitulo.innerHTML = "Changed Text!"
+            mudarParag.textContent = "The text disappeared"
+        })
+
+
+        /* EX 2 */
+        let valorInpt1 = window.document.getElementById("i2")
+        let botao2 = window.document.getElementById("b2")
+        let campoVazio = window.document.getElementById("campoVazio")
+
+        botao2.addEventListener("click", () => {
+            campoVazio.textContent = valorInpt1.value
+        })
+
+
+        /* EX 3 */
+        let lista = window.document.getElementById("adicionar")
+        let botao3 = window.document.getElementById("b3")
+
+        botao3.addEventListener("click", () => {
+            const novoElemento = window.document.createElement("li")
+            novoElemento.textContent = input.value
+            lista.appendChild(novoElemento)
+        })
+    </script>
+</body>
+</html>
