@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Lista de Tarefas</h1>
+    <input type="text" id="caixaTexto">
+    <input type="button" value="Clicar" id="botao">
+    <ul id="lista"></ul>
+
+    <script>
+        const cxt = window.document.getElementById("caixaTexto")
+        const bt = window.document.getElementById("botao")
+        const lis = window.document.getElementById("lista")
+
+        bt.addEventListener("click", () => {
+            if (cxt.value === "") {
+                return
+            }
+            
+            const criar = document.createElement("li")
+
+            criar.addEventListener("click", () => {
+                if (criar.style.textDecoration == "line-through") {
+                    criar.style.textDecoration = "none"
+                } else {
+                    criar.style.textDecoration = "line-through"
+                }
+            })
+            criar.textContent = cxt.value
+            lis.appendChild(criar)
+
+            cxt.value = ""
+        })
+
+
+        //criar.style.textDecoration = "line-through"
+        //criar.remove()
+    </script>
+</body>
+
+</html>

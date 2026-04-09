@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- EXERCICIO 1 -->
     <h1>Controle de texto</h1>
@@ -38,10 +40,10 @@
 
     <hr>
     <!-- EXERCICIO 3 -->
-     <h2>Criar coisas dinamicamente</h2>
+    <h2>Criar coisas dinamicamente</h2>
     <input type="text" id="adicionar"> -
     <input type="button" value="click" id="b3">
-    <ul></ul>
+    <ul id="novoItem"></ul>
 
     <script>
         /* EX 1 */
@@ -66,14 +68,17 @@
 
 
         /* EX 3 */
-        let lista = window.document.getElementById("adicionar")
-        let botao3 = window.document.getElementById("b3")
+        const adicionar = window.document.getElementById("adicionar")
+        const botao3 = window.document.getElementById("b3")
+        const novoItem = window.document.getElementById("novoItem")
 
         botao3.addEventListener("click", () => {
-            const novoElemento = window.document.createElement("li")
-            novoElemento.textContent = input.value
-            lista.appendChild(novoElemento)
+            console.log(adicionar.value)
+            const criar = window.document.createElement("li")
+            criar.textContent = adicionar.value
+            novoItem.appendChild(criar)
         })
     </script>
 </body>
+
 </html>
