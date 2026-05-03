@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .concluido {
+    text-decoration: line-through;
+    color: rgb(155, 30, 30);
+    }
+    </style>
+</head>
+
+<body>
+    <h1>teste</h1>
+    <input type="text">
+    <button>aperte</button>
+    <ul></ul>
+
+    <script>
+        const botao = document.querySelector("button")
+        const titulo = document.querySelector("h1")
+        const texto = document.querySelector("input")
+        const lista = document.querySelector("ul")
+
+        botao.addEventListener("click", () => {
+            if (texto.value.trim() !== "") {
+                const item = document.createElement("li")
+                item.textContent = texto.value
+
+                lista.appendChild(item)
+
+                item.addEventListener("click", () => {
+                    item.classList.toggle("concluido")
+                })
+
+                item.addEventListener("dblclick", () => {
+                    item.remove()
+                })
+
+                texto.value = ""
+                texto.focus()
+            }
+        })
+    </script>
+</body>
+
+</html>
